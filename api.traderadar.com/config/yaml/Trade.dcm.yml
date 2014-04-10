@@ -1,0 +1,55 @@
+# config/yaml/Trade.dcm.yml
+Trade:
+  type: entity
+  table: trade
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+    user_id:
+      type: integer
+    image: 
+      type: string
+      nullable: true
+    cross_reference_id:
+      type: integer
+    timeframe_id:
+      type: integer
+    technical_pattern_id:
+      type: integer
+    operation_type:
+      type: string
+    volume:
+      type: decimal
+    capital_risk:
+      type: decimal
+    entry_price: 
+      type: decimal
+    stop_loss: 
+      type: decimal
+    target_price_primary:
+      type: decimal
+      nullable: true
+    target_price_secondary:
+      type: decimal
+      nullable: true
+    note: 
+      type: text
+      nullable: true
+    status: 
+      type: smallint
+    result: 
+      type: string
+      nullable: true
+    date_open:
+      type: datetime
+    date_close:
+      type: datetime
+      nullable: true
+    last_update:
+      type: datetime
+

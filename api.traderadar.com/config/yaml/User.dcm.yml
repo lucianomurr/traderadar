@@ -1,0 +1,24 @@
+# config/yaml/User.dcm.yml
+User:
+  type: entity
+  table: user
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+    surname:
+      type: string
+    email:
+      type: string
+    password:
+      type: string
+    timezone:
+      type: string
+    register_date:
+      type: datetime
+    last_access:
+      type: datetime
