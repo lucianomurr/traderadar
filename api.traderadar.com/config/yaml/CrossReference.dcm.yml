@@ -12,3 +12,5 @@ CrossReference:
       type: string
     last_update:
       type: datetime
+    user_id:
+      type: integer

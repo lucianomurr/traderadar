@@ -49,7 +49,7 @@ class Trade
     /**
      * @var string
      */
-    protected $operation_type;
+    protected $operation_type_id;
 
     /**
      * @var decimal
@@ -157,9 +157,9 @@ class Trade
     }
 
     /* OPERATION TYPE */ 
-    public function getOperationType(){return $this->operation_type;}
-    public function setOperationType($operation_type){
-        $this->operation_type = $operation_type;
+    public function getOperationType(){return $this->operation_type_id;}
+    public function setOperationType($operation_type_id){
+        $this->operation_type_id = $operation_type_id;
     }
 
     /* VOLUME */

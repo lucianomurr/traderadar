@@ -21,8 +21,8 @@ Trade:
       type: integer
     technical_pattern_id:
       type: integer
-    operation_type:
-      type: string
+    operation_type_id:
+      type: integer
     volume:
       type: decimal
     capital_risk:

@@ -17,6 +17,7 @@ class CrossReference
      * @var int
      */
     protected $id;
+    
     /**
      * @Column(type="string")
      * @var string
@@ -24,10 +25,22 @@ class CrossReference
     protected $name;
 
     /**
+     * @Column(type="string")
+     * @var string
+     */
+    protected $description;
+
+    /**
      * @Column(type="datetime")
      * @var DateTime
      */
     protected $last_update;
+
+    /**
+     * @Column(type="integer")
+     * @var [type]
+     */
+    protected $user_id;
 
 
 
@@ -52,6 +65,16 @@ class CrossReference
         $this->name = $name;
     }
 
+    /* DESCRIPTION */ 
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
 
     
     /* LAST UPDATE DATE */ 
@@ -63,6 +86,17 @@ class CrossReference
     public function setLastAccessDate(DateTime $last_access_date)
     {
         $this->last_access_date = $last_access_date;
+    }
+
+    /* LAST UPDATE DATE */ 
+    public function getUserID()
+    {
+        return $this->user_id;
+    }
+
+    public function setUserID($user_id)
+    {
+        $this->user_id = $user_id;
     }
 
 
