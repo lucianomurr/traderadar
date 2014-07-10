@@ -694,8 +694,10 @@ hr {
 .header .nav > li.dropdown.user .dropdown-toggle:hover {
   text-decoration: none;
 }
-.header  a{
+.header a{
 	text-decoration:none;
+   font-size: 22px;
+   color: #fff;
 }
 .header .chat-toggler{
 	position:relative;
