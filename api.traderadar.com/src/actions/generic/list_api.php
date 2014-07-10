@@ -1,7 +1,16 @@
 <?php
-echo sprintf("{trades: '%s', login: '%s', dashboard: '%s'}\n", 
+echo sprintf("{
+   Trades: '%s', 
+   Login: '%s', 
+   Dashboard: '%s', 
+   Crossreference: '%s', 
+   TimeFrame: '%s', 
+   OperationType: '%s'}\n", 
       '/trades',
       '/login',
-      '/dashboard'
+      '/dashboard',
+      '/crossreference',
+      '/timeframe',
+      '/operationtype'
       );
 
