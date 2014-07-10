@@ -20,7 +20,7 @@ $dbParams = array(
     'host' => '127.0.0.1',
     'user'     => 'doctrinedb',
     'password' => '1234',
-    'dbname'   => 'doctrine',
+    'dbname'   => 'doctrine'
 );
 
 // obtaining the entity manager

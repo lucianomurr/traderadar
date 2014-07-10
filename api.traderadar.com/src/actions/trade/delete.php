@@ -1,5 +1,8 @@
 <?php
-// update_product.php <id> <new-name>
+/**
+ * @file(//src/actions/trade/delete.php)
+ * @author: Luciano Murruni //2014-03-27
+ */
 require_once "bootstrap.php";
 
 $id = $argv[1];
@@ -12,6 +15,8 @@ if ($trade === null) {
     exit(1);
 }
 
-$trade->setName($newName);
+/**
+ * Remove trade code here
+ */
 
 $entityManager->flush();

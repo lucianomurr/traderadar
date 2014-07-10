@@ -25,50 +25,66 @@ $klein->respond('POST', '/login', function () {
 //trades "directory" API (a valid tocken required for all)
 $klein->with('/trades', function () use ($klein) {
 
-    //get list trade
+    //GET list trade
     $klein->respond('GET', '/?', function ($request, $response) {
-        // list of trade
-        //return 'elenco dei trade: '. $request->idTrade;
-        include("src/actions/trade/list_trade.php");
+        include("src/actions/trade/list.php");
         return;
     });
     
-    //get single trade to view or edit
+    //GET single trade to view or edit
     $klein->respond('GET', '/[:idTrade]', function ($request, $response, $service, $app) {
-        // Show a single trade
         $idTrade = (int)$request->idTrade;
         if ( is_int($idTrade) )
         {
-          include("src/actions/trade/get_trade.php");  
+          include("src/actions/trade/load.php");  
         }
         return;
     });
 
-    //post add trade 
+    //POST: add new trade 
     $klein->respond('POST', '/?', function ($request, $response) {
-        // list of trade
-        include("src/actions/trade/create_trade.php");
+        include("src/actions/trade/save.php");
         return;
     });
 
-    //save trade after update
+    //POST: save single trade after update (idTrade is required)
     $klein->respond('POST', '/[:idTrade]', function ($request, $response) {
-        include("src/actions/trade/create_trade.php");
+        include("src/actions/trade/save.php");
     });
 
-    //delete trade
+    //DELETE: delete trade (idTrade is required)
     $klein->respond('DELETE', '/[:idTrade]', function ($request, $response) {
-        return 'Elimina il trade: '. $request->idTrade;
+        include("src/actions/trade/delete.php");
     });
 
 });
 
 $klein->with('/crossreference', function () use ($klein) {
+    //GET list crossreference
+    $klein->respond('GET', '/?', function ($request, $response) {
+        include("src/actions/crossreference/list.php");
+        return;
+    });
 
+    //POST: add new trade 
+    $klein->respond('POST', '/?', function ($request, $response) {
+        include("src/actions/crossreference/save.php");
+        return;
+    });
 });
 
 $klein->with('/timeframe', function () use ($klein) {
+    //GET list crossreference
+    $klein->respond('GET', '/?', function ($request, $response) {
+        include("src/actions/timeframe/list.php");
+        return;
+    });
 
+    //POST: add new trade 
+    $klein->respond('POST', '/?', function ($request, $response) {
+        include("src/actions/timeframe/save.php");
+        return;
+    });
 });
 
 $klein->with('/operationtype', function () use ($klein) {

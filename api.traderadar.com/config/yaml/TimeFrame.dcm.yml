@@ -1,7 +1,7 @@
-# config/yaml/User.dcm.yml
-CrossReference:
+# config/yaml/Timeframe.dcm.yml
+TimeFrame:
   type: entity
-  table: cross_reference
+  table: time_frame
   id:
     id:
       type: integer
@@ -10,8 +10,8 @@ CrossReference:
   fields:
     name:
       type: string
-    description:
-      type: string
+    minutes:
+      type: integer
     last_update:
       type: datetime
     user_id:

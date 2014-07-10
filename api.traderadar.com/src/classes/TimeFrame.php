@@ -1,10 +1,10 @@
 <?php
 /**
- * file(//src/classes/CrossReference.php)
+ * file(//src/classes/TimeFrame.php)
  * @author: Luciano Murruni //2014-03-27
  */
 
-class CrossReference
+class TimeFrame
 {
     /**
     * Property
@@ -23,7 +23,7 @@ class CrossReference
     /**
      * @var string
      */
-    protected $description;
+    protected $minutes;
 
     /**
      * @var DateTime
@@ -57,14 +57,14 @@ class CrossReference
     }
 
     /* DESCRIPTION */ 
-    public function getDescription()
+    public function getMinutes()
     {
-        return $this->description;
+        return $this->minutes;
     }
 
-    public function setDescription($description)
+    public function setMinutes($minutes)
     {
-        $this->description = $description;
+        $this->minutes = $minutes;
     }
 
     

@@ -7,9 +7,7 @@
 class Trade
 {
     /**
-
     *Property
-
     */
 
     /**
@@ -113,9 +111,7 @@ class Trade
 
 
     /**
-    
-    * METHOD
-
+    * Lista delle funzioni GET / SET
     */
 
     public function getId(){return $this->id;}

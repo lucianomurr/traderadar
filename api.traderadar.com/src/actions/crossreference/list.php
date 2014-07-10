@@ -1,7 +1,7 @@
 <?php
 /**
- * @file(//src/actions/list_trade.php)
- * @author: Luciano Murruni //2014-03-27
+ * @file(//src/actions/crossreference/list.php)
+ * @author: Luciano Murruni //2014-07-10
  */
 
 require_once "bootstrap.php";
@@ -14,14 +14,15 @@ if (array_key_exists('Authorization', $headers)) {
 
   $user_id = $headers['Authorization'];
   
-  $tradeRepository = $entityManager->getRepository('Trade');
-  $trades = $tradeRepository->findBy( array('user_id'=>$user_id) );
+  $crossRepository = $entityManager->getRepository('CrossReference');
+  $crosses = $crossRepository->findBy( array('user_id'=>$user_id) );
 
-  if( count($trades) > 0 )
+  if( count($crosses > 0) )
   {
-    foreach ($trades as $trade) {
-        
-      $jsonContent = $serializer->serialize($trade, 'json');
+    foreach ($crosses as $cross) {
+      
+      //print_r($cross);
+      $jsonContent = $serializer->serialize($cross, 'json');
       echo $jsonContent;
         
     }
