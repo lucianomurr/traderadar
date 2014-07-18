@@ -1,0 +1,121 @@
+body { background: #f0f2f5; font-family: 'Open Sans', sans-serif; font-weight: 400; }
+
+body .cw_button_back a { width: 242px; height: 25px; display: block; color: #fff; font-size: 13px; padding: 9px 0 0 50px; font-family: 'DroidSansBold'; background: url("../images/button_back.png") no-repeat left bottom; }
+body .cw_button_back a:hover { background-position: left top; }
+
+a { text-decoration:none; }
+hr { visibility: hidden; display: none; }
+
+.hide { display: none; visibility: hidden; }
+.left { float: left; }
+.right { float: right; }
+
+.image { width: 100%; }
+.image img { height: auto; max-width: 100%; }
+.radius { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+
+.wrapper { padding: 0 40px; }
+.wrapper:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix:before, .clearfix:after { content: '\0020'; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+.clear { clear: both; display: block; overflow: hidden; visibility: hidden; width: 0; height: 0; }
+
+.header { background: #DE3C44; height: 60px; width: 100%; }
+.header .logo { background: url('../img/logo.png') no-repeat center center; width: 56px; height: 60px; text-indent: -9999px; float: left; display: block; }
+.header .section_title { float: left; width: 200px; text-align: center; color: #fff; font-size: 18px; position: absolute; top: 0; left: 50%; margin-left: -100px; line-height: 60px; font-weight: 600; }
+.header .menu_btn { background: url('../img/ico_menu.png') no-repeat center center; width: 21px; height: 60px; text-indent: -9999px; float: right; display: block; }
+
+.callout_items { clear: both; padding: 40px 0; margin: 0px; }
+
+.col { display: block; float:left; margin: 0 0 2% 1.6%; }
+
+.grid_item { background: #DE3C44; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.grid_item img { border-top-left-radius: 4px; border-top-right-radius: 4px; }
+
+
+.col:nth-child(4n+1) { margin-left: 0; }
+.col:first-child { margin-left: 0; }
+
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both; }
+.group { zoom:1; /* For IE 6/7 */ }
+
+.four_columns { width: 100%; }
+.three_columns { width: 74.6%; }
+.two_columns { width: 49.2%; }
+.one_column { width: 23.8%; }
+
+
+
+
+
+.data { padding: 10px 10px 0; }
+.data p { font-size: 13px; font-weight: 600; text-transform: uppercase; color: #fff; line-height: 22px; }
+.rating { list-style: none; padding: 4px 0 15px; }
+.rating li { display: block; float: left; margin-left: 5px; }
+.rating li .star { background: url('../img/ico_star.png') no-repeat; width: 16px; height: 14px; display: block; }
+.rating li .on { background-position: center top }
+.rating li .off { background-position: center bottom }
+
+.block_rating { margin-top: 60px; }
+.block_rating .title { font-size: 14px; font-weight: 400; color: #404051; text-transform: uppercase; margin-bottom: 5px; }
+.block_rating .red_date { font-size: 14px; font-weight: 400; color: #E73F3E; text-transform: uppercase; }
+
+
+
+.section_header { padding: 40px 0; border-bottom: 1px solid #CBD1D9; }
+.section_header .select { width: 32.46%; height: 40px; line-height: 40px; padding: 0 15px; font-size: 14px; background: url('../img/select_arrow.png') no-repeat right center #CBD1D9; margin: 0; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; color:#888; border:none; outline:none; display: inline-block; -webkit-appearance:none; -moz-appearance:none; appearance:none; cursor:pointer; }
+
+.select { height: 40px; line-height: 40px; padding: 0 15px; font-size: 14px; background: url('../img/select_arrow.png') no-repeat right center #CBD1D9; margin: 0; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; color:#888; border:none; outline:none; display: inline-block; -webkit-appearance:none; -moz-appearance:none; appearance:none; cursor:pointer; }
+
+
+
+
+
+
+.list_view { background: url('../img/ico_list_view.png') no-repeat center center #00B2E0; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; display: block; width: 50px; height: 40px; }
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	
+	body { background: red; }
+	
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	body { background: yellow; }
+	
+}
+
+@media only screen and (max-width: 479px) {
+
+	body { background: green; }
+
+}
+
+
+
+
+/* Retina */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+
+	.header .logo { background-image: url('../img/logo_retina.png'); background-size: 56px 29px; }
+	.header .menu_btn { background-image: url('../img/ico_menu_retina.png'); background-size: 21px 16px; }
+	
+}
+
+
+
+
+
+
+
+
+
+
