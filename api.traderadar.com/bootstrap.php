@@ -18,9 +18,9 @@ $config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), 
 $dbParams = array(
     'driver'   => 'pdo_mysql',
     'host' => '127.0.0.1',
-    'user'     => 'doctrinedb',
-    'password' => '1234',
-    'dbname'   => 'doctrine'
+    'user'     => 'traderadardb',
+    'password' => '!Tradar1234',
+    'dbname'   => 'traderadar'
 );
 
 // obtaining the entity manager
