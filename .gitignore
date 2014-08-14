@@ -1,2 +1,4 @@
 vendor/
+platforms/
+app.traderadar.com/tradeRadar/www/lib/
 api.traderadar.com/composer.lock
