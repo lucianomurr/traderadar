@@ -8,12 +8,13 @@ Trade:
       generator:
         strategy: AUTO
   fields:
-    name:
-      type: string
     user_id:
       type: integer
     image: 
       type: string
+      nullable: true
+    rating:
+      type: integer
       nullable: true
     cross_reference_id:
       type: integer

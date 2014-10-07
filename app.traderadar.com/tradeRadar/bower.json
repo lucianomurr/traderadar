@@ -6,6 +6,9 @@
   },
   "dependencies": {
     "requirejs-plugins": "~1.0.2",
-    "angular-touch": "~1.2.21"
+    "angular-touch": "~1.2.21",
+    "angular-resource": "~1.2.26",
+    "angular-translate": "~2.4.0",
+    "ionic-rating": "~0.0.2"
   }
 }

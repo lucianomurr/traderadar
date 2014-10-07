@@ -1,45 +1,20 @@
-'use strict';
-define(['angular', 'ionic'], function() {
+define(['angular'], function(angular) {
+    'use strict';
 
-  angular.module('starter.controllers', [])
-    .controller('DashboardCtrl', function($scope) {
-      $scope.trades = [{
-        img: 'img/01.png',
-        id: 1,
-        crossreference: 'USD - EUR',
-        entry: '2.3673',
-        stoploss: '240M'
-      }, {
-        img: 'img/01.png',
-        id: 2,
-        crossreference: 'USD - EUR',
-        entry: '2.3673',
-        stoploss: '240M'
-      }, {
-        img: 'img/01.png',
-        id: 3,
-        crossreference: 'USD - EUR',
-        entry: '2.3673',
-        stoploss: '240M'
-      }, {
-        img: 'img/01.png',
-        id: 4,
-        crossreference: 'USD - EUR',
-        entry: '2.3673',
-        stoploss: '240M'
-      }, {
-        img: 'img/01.png',
-        id: 5,
-        crossreference: 'USD - EUR',
-        entry: '2.3673',
-        stoploss: '240M'
-      }, {
-        img: 'img/01.png',
-        id: 6,
-        crossreference: 'USD - EUR',
-        entry: '2.3673',
-        stoploss: '240M'
-      }];
-      console.log($scope.playlists);
-    });
+    var dashboardController = function($scope, $stateParams, trades) {
+
+        console.log('dashboardController controllers loaded');
+
+        var entry = trades.get({
+            id: $scope.id
+        }, function() {
+            console.log(entry);
+            $scope.trades = entry.payload;
+        }); // get() returns a single entry
+
+
+    };
+
+    angular.module('traderadar.controllers')
+        .controller('DashboardCtrl', ['$scope', '$stateParams', 'Trades', dashboardController]);
 });

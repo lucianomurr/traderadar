@@ -26,7 +26,7 @@ $klein->respond('POST', '/login', function () {
 $klein->with('/trades', function () use ($klein) {
 
     //GET list trade
-    $klein->respond('GET', '/?', function ($request, $response) {
+    $klein->respond('GET', '/?', function ($request, $response, $service) {
         include("src/actions/trade/list.php");
         return;
     });

@@ -14,10 +14,6 @@ class Trade
      * @var int
      */
     protected $id;
-    /**
-     * @var string
-     */
-    protected $name;
 
     /**
      * @var string
@@ -28,6 +24,11 @@ class Trade
      * @var string
      */
     protected $image;
+
+    /**
+     * @var integer
+     */
+    protected $rating;
 
     /**
      * @var integer
@@ -126,6 +127,12 @@ class Trade
     public function getUserId(){return $this->user_id;}
     public function setUserId($user_id) {
         $this->user_id = $user_id;
+    }
+
+    /* Rating */ 
+    public function getRating(){return $this->rating;}
+    public function setRating($rating){
+        $this->rating = $rating;
     }
 
     /* Image */ 

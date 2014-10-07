@@ -1,6 +1,6 @@
 <ion-view title="Dashboard">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
     <section class="section">
@@ -21,12 +21,12 @@
           </header>
           <ul class="callout_items clearfix">
             <li class="four_columns grid_item clearfix" ng-repeat="tradeItem in trades">
-              <a class="image" href="#/app/trade/{{tradeItem.idTrade}}"><img class="image" src="{{tradeItem.img}}"></a>
+              <a class="image" href="#/app/trade/{{tradeItem.id}}"><img class="image" src="{{tradeItem.img}}"></a>
               <div class="data">
-                <p class="left">{{tradeItem.crossreference}}</p>
-                <p class="right">ENTRY: {{tradeItem.crossreference}}</p>
+                <p class="left">{{tradeItem.cross_reference}}</p>
+                <p class="right">ENTRY: {{tradeItem.cross_reference}}</p>
                 <div class="clear"></div>
-                <p class="left">{{tradeItem.stoploss}}</p>
+                <p class="left">{{tradeItem.stop_loss}}</p>
                 <ul class="rating right">
                   <li><a class="star on"></a></li>
                   <li><a class="star on"></a></li>

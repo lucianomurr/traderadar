@@ -3,29 +3,28 @@
 require_once "bootstrap.php";
 
 $headers = apache_request_headers();
-if ($headers['Authorization']){
-
-  $user_id = $headers['Authorization'];
+//if ($headers['Authorization']){
+  $user_id = 1001;
 
   //set user id
   $newTradeUserId = $user_id;
 
+  $data = json_decode($request->data);
+
   //get data from request
-  $newTradeName = $request->name;
-  $newCrossReference = $request->cross_reference;
-  $newTimeframe = $request->timeframe;
-  $newTechnicalPattern = $request->technical_pattern;
-  $newOperationType = $request->operation_type;
-  $newVolume = $request->volume;
-  $newCapitalRisk = $request->capital_risk;
-  $newEntryPrice = $request->entry_price;
-  $newStopLoss = $request->stop_loss;
+  $newCrossReference = $data->CrossReference;
+  $newTimeframe = $data->TimeFrame;
+  $newTechnicalPattern = $data->TechnicalPatterns;
+  $newOperationType = $data->OperationType;
+  $newVolume = $data->Volume;
+  $newCapitalRisk = $data->CapitalRisk;
+  $newEntryPrice = $data->EntryPrice;
+  $newStopLoss = $data->StopLoss;
 
   //create new entity
   $trade = new Trade();
 
   //set entity data for create new record
-  $trade->setName($newTradeName);
   $trade->setUserId($newTradeUserId);
   $trade->setCrossReference($newCrossReference);
   $trade->setTimeframe($newTimeframe);
@@ -43,6 +42,11 @@ if ($headers['Authorization']){
   $entityManager->persist($trade);
   $entityManager->flush();
 
-  echo "Created Product with ID " . $trade->getId() . "\n";
+  if ($newTrade = $trade->getId()){
+    header('HTTP/1.0 204 No Content');
+    echo '{"success": true,"payload": {"tradeId": '.$trade->getId().'}}';
+    
+  }
   
-}
+  
+//}
