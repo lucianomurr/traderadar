@@ -21,19 +21,13 @@
           </header>
           <ul class="callout_items clearfix">
             <li class="four_columns grid_item clearfix" ng-repeat="tradeItem in trades">
-              <a class="image" href="#/app/trade/{{tradeItem.id}}"><img class="image" src="{{tradeItem.img}}"></a>
+              <a class="image" href="#/app/trade/{{tradeItem.id}}"><img class="image" ng-src="{{tradeItem.img || 'img/01.png'}}"></a>
               <div class="data">
                 <p class="left">{{tradeItem.cross_reference}}</p>
                 <p class="right">ENTRY: {{tradeItem.cross_reference}}</p>
                 <div class="clear"></div>
                 <p class="left">{{tradeItem.stop_loss}}</p>
-                <ul class="rating right">
-                  <li><a class="star on"></a></li>
-                  <li><a class="star on"></a></li>
-                  <li><a class="star on"></a></li>
-                  <li><a class="star off"></a></li>
-                  <li><a class="star off"></a></li>
-                </ul>
+                <rating ng-model="tradeItem.stop_loss" max="5" readonly="readonly"></rating>
               </div>
             </li><!-- four_columns -->
           </ul><!-- callout_items -->

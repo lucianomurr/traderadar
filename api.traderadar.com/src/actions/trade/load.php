@@ -6,15 +6,12 @@ $serializer = JMS\Serializer\SerializerBuilder::create()->build();
 $trade = $entityManager->find('Trade', $idTrade);
 
 if ($trade === null) {
-    echo "{msg: 'No trade found.'}\n";
-    exit(1);
+    //set new header status
+    header('HTTP/1.0 204 No Content');
+    echo '{"success": false,"payload": {},"error": {"code": 204,"message": "No data found!"}}';  
 }
 
+//set new header status
+$response->sendHeaders('HTTP/1.0 200 ok');
 $jsonContent = $serializer->serialize($trade, 'json');
-echo $jsonContent;
-/*echo sprintf("{id: %d, name: '%s', user_id: %d, image: '%s'}\n", 
-      $trade->getId(),
-      $trade->getName(),
-      $trade->getUserId(),
-      $trade->getImage()
-      );*/
+echo '{"success": true, "payload": '.$jsonContent.'}';

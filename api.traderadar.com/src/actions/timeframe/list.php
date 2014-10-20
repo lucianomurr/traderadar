@@ -7,30 +7,29 @@
 require_once "bootstrap.php";
 
 $serializer = JMS\Serializer\SerializerBuilder::create()->build();
+
+//get header info
 $headers = apache_request_headers();
+//if (array_key_exists('Authorization', $headers)) {
 
-
-if (array_key_exists('Authorization', $headers)) {
-
-  $user_id = $headers['Authorization'];
+  $user_id = 1; //$headers['Authorization'];
   
   $timeFrameRepository = $entityManager->getRepository('TimeFrame');
   $timeframes = $timeFrameRepository->findBy( array('user_id'=>$user_id) );
-
-  if( count($timeframes > 0) )
+  if( count($timeframes) > 0 )
   {
-    foreach ($timeframes as $timeframe) {
-      
-      $jsonContent = $serializer->serialize($timeframe, 'json');
-      echo $jsonContent;
-        
-    }
+      //set new header status
+      $response->sendHeaders('HTTP/1.0 200 ok');
+      $restContent = $serializer->serialize($timeframes, 'json');
+      echo '{"success": true, "payload": '.$restContent.'}';
   }
   else
   {
-    echo "{err: 101, msg: 'no result found'}";  
+    //set new header status
+    header('HTTP/1.0 204 No Content');
+    echo '{"success": false,"payload": {},"error": {"code": 204,"message": "No data found!"}}';  
   }
-
+/*
 } else {
   echo "{err: 201, msg: 'invalid request'}";
-}
+}*/

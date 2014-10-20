@@ -2,6 +2,8 @@ define(['angular',
     'angularIonic',
     'config',
     'factory/trades',
+    'factory/timeframe',
+    'factory/crossreference',
     'controller/appController',
     'controller/dashboardController',
     'controller/loginController',
@@ -14,7 +16,8 @@ define(['angular',
     return angular.module('starter', ['ionic',
             'traderadar.controllers',
             'traderadar.factories',
-            'ngResource'
+            'ngResource',
+            'ionic.rating'
         ])
         .config(function($stateProvider, $urlRouterProvider) {
 

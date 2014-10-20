@@ -26,13 +26,7 @@
                   <div class="block_rating clearfix">
                      <div class="two_columns">
                         <h3 class="title">Rating</h3>
-                        <ul class="rating">
-                           <li><a class="star off"></a></li>
-                           <li><a class="star off"></a></li>
-                           <li><a class="star off"></a></li>
-                           <li><a class="star off"></a></li>
-                           <li><a class="star off"></a></li>
-                        </ul>
+                        <rating ng-model="trades.data.rating" max="5"></rating>
                      </div><!-- two_columns -->
                      <div class="two_columns hide">
                         <h3 class="title">Last Update</h3>
@@ -47,62 +41,41 @@
                   <label class="label">Cross</label><br>
                   <select class="select_form" name="select" ng-model="trades.data.CrossReference">
                      <option selected value="">Choose</option>
-                     <option value="1">Volvo</option>
-                     <option value="2">Saab</option>
-                     <option value="3">Opel</option>
-                     <option value="4">Audi</option>
+                     <option ng-repeat="crossreference in crossreferences" value="{{crossreference.name}}">{{crossreference.description}}</option>
                   </select>
                   <div class="clear"></div>
                   <label class="label">Technical Patterns</label><br>
                   <select class="select_form" name="select" ng-model="trades.data.TechnicalPatterns">
                      <option selected value="">Choose</option>
-                     <option value="1">Volvo</option>
-                     <option value="2">Saab</option>
-                     <option value="3">Opel</option>
-                     <option value="4">Audi</option>
+                     <option value="Meccanica">Meccanica</option>
+                     <option value="Tecnica">Tecnica</option>
                   </select>
                </div><!-- two_columns -->
                <div class="two_columns">
                   <label class="label">Time Frame</label><br>
                   <select class="select_form" name="select" ng-model="trades.data.TimeFrame">
                      <option selected value="">Choose</option>
-                     <option value="1">Volvo</option>
-                     <option value="2">Saab</option>
-                     <option value="3">Opel</option>
-                     <option value="4">Audi</option>
+                     <option ng-repeat="timeframe in timeframes" value="{timeframe.value}">{{timeframe.name}}</option>
                   </select>
                   <div class="clear"></div>
                   <label class="label">Operation Type</label><br>
                   <select class="select_form" name="select" ng-model="trades.data.OperationType">
                      <option selected value="">Choose</option>
-                     <option value="1">Volvo</option>
-                     <option value="2">Saab</option>
-                     <option value="3">Opel</option>
-                     <option value="4">Audi</option>
+                     <option value="Long">Long</option>
+                     <option value="Short">Short</option>
                   </select>
+                     
                </div><!-- two_columns -->
             </div><!-- collout_items -->
             <div class="space"></div>
             <div class="collout_items clearfix">
                <div class="two_columns">
                   <label class="label">Target Profit #1</label><br>
-                  <select class="select_form" name="select" ng-model="trades.data.TargetProfit1">
-                     <option selected value="">Choose</option>
-                     <option value="1">Volvo</option>
-                     <option value="2">Saab</option>
-                     <option value="3">Opel</option>
-                     <option value="4">Audi</option>
-                  </select>
+                  <input type="number" min="1" max="100" ng-model="trades.data.TargetProfit1" value="1" class="select_form">
                </div><!-- two_columns -->
                <div class="two_columns">
                   <label class="label">Target Profit #2</label><br>
-                  <select class="select_form" name="select" ng-model="trades.data.TargetProfit2">
-                     <option selected value="">Choose</option>
-                     <option value="1">Volvo</option>
-                     <option value="2">Saab</option>
-                     <option value="3">Opel</option>
-                     <option value="4">Audi</option>
-                  </select>
+                  <input type="number" min="1" max="100" ng-model="trades.data.TargetProfit2" value="1" class="select_form">
                </div><!-- two_columns -->
             </div><!-- collout_items -->
             <div class="space"></div>
@@ -118,32 +91,17 @@
                   </select>
                   <div class="clear"></div>
                   <label class="label">Entry Price</label><br>
-                  <select class="select_form" name="select" ng-model="trades.data.EntryPrice">
-                     <option selected value="">Choose</option>
-                     <option value="1">Volvo</option>
-                     <option value="2">Saab</option>
-                     <option value="3">Opel</option>
-                     <option value="4">Audi</option>
-                  </select>
+                  <input type="number" min="1" max="1000" ng-model="trades.data.EntryPrice" value="1" class="select_form">
                </div><!-- two_columns -->
                <div class="two_columns">
                   <label class="label">Capital Risk</label><br>
                   <select class="select_form" name="select" ng-model="trades.data.CapitalRisk">
                      <option selected value="">Choose</option>
-                     <option value="1">Volvo</option>
-                     <option value="2">Saab</option>
-                     <option value="3">Opel</option>
-                     <option value="4">Audi</option>
+                     <option ng-repeat="capitalRisk in capitalRisks" value="{{capitalRisk.id}}">{{capitalRisk.name}}</option>
                   </select>
                   <div class="clear"></div>
                   <label class="label">Stop Loss</label><br>
-                  <select class="select_form" name="select" ng-model="trades.data.StopLoss">
-                     <option selected value="">Choose</option>
-                     <option value="1">Volvo</option>
-                     <option value="2">Saab</option>
-                     <option value="3">Opel</option>
-                     <option value="4">Audi</option>
-                  </select>
+                  <input type="number" min="1" max="1000" ng-model="trades.data.StopLoss" value="1" class="select_form">
                </div><!-- two_columns -->
             </div><!-- collout_items -->
             <div class="space"></div>

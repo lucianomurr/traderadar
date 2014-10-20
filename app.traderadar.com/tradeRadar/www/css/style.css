@@ -66,6 +66,29 @@ hr { visibility: hidden; display: none; }
 .callout_items .block_rating .rating li .on { background-position: center top }
 .callout_items .block_rating .rating li .off { background-position: center bottom }
 
+/**/
+.callout_items .grid_item ul.rating li {
+  display: inline;
+  border: 0px;
+  background: none;
+  padding: 0px 1px;
+}
+.callout_items .grid_item ul.rating li i {
+  font-size: 17px;
+  color: yellow;
+}
+.callout_items .block_rating ul.rating li {
+  display: inline;
+  border: 0px;
+  background: none;
+  padding: 0px 1px;
+}
+.callout_items .block_rating ul.rating li i {
+  font-size: 37px;
+  color: #00B2E0;
+}
+/**/
+
 .block_rating { margin: 60px 0 0; }
 .block_rating .title { font-size: 14px; font-weight: 400; color: #404051; text-transform: uppercase; margin-bottom: 10px; }
 .block_rating .red_date { font-size: 18px; font-weight: 400; color: #E73F3E; text-transform: uppercase; margin-top: 16px; display: block; }

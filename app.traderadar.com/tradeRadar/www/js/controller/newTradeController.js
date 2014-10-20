@@ -1,21 +1,45 @@
 define(['angular'], function(angular) {
     'use strict';
 
-    var tradeController = function($scope, $stateParams, Trades) {
+    var tradeController = function($scope, $stateParams, Trades, TimeFrame, CrossReference) {
 
         console.log('tradeNew controllers loaded');
 
+
+        /**
+         * get crossreference entities
+         * @return {payload}   crossreference $resources
+         */
+        var i,
+            crossreferences = CrossReference.get({
+                id: $scope.id
+            }, function() {
+                $scope.crossreferences = crossreferences.payload;
+            }),
+
+            /**
+             * get timeframe entities
+             * @return {payload}   timeframe $resources
+             */
+            timeframes = TimeFrame.get({
+                id: $scope.id
+            }, function() {
+                $scope.timeframes = timeframes.payload;
+            });
+
+        $scope.capitalRisks = [];
+        for (i = 1; i < 100; i++) {
+            $scope.capitalRisks.push({
+                'id': i,
+                'name': i
+            });
+        }
+
+        /**
+         * declare new Trades Resources
+         */
         $scope.trades = new Trades();
-        $scope.trades.data = {
-            'CrossReference': 1,
-            'TimeFrame': 2,
-            'TechnicalPatterns': 2,
-            'OperationType': 2,
-            'Volume': 2,
-            'CapitalRisk': 2,
-            'EntryPrice': 2,
-            'StopLoss': 2
-        };
+        $scope.trades.data = {};
 
         console.log('ID-Trade: ', $stateParams.idTrade);
         if ($stateParams.idTrade > 0) {
@@ -45,6 +69,6 @@ define(['angular'], function(angular) {
     };
 
     angular.module('traderadar.controllers')
-        .controller('TradeNewCtrl', ['$scope', '$stateParams', 'Trades', tradeController]);
+        .controller('TradeNewCtrl', ['$scope', '$stateParams', 'Trades', 'TimeFrame', 'CrossReference', tradeController]);
 
 });

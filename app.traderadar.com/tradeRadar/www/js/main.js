@@ -12,7 +12,7 @@ require.config({
         angularSanitize: '../lib/angular-sanitize/angular-sanitize',
         angularResource: '../lib/angular-resource/angular-resource',
         uiRouter: '../lib/angular-ui-router/release/angular-ui-router',
-        angularRatings: '../lib/angular-ratings/angular-ratings',
+        angularRatings: '../lib/ionic-rating/ionic-rating',
         angularTranslate: '../lib/angular-translate/angular-translate',
         ionic: '../lib/ionic/js/ionic',
         angularIonic: '../lib/ionic/js/ionic-angular',
@@ -27,6 +27,8 @@ require.config({
         'angularSanitize': ['angular'],
         'angularResource': ['angular'],
         'uiRouter': ['angular'],
+        'angularRatings': ['angular'],
+        'angularTranslate': ['angular'],
         'ionic': {
             'exports': 'ionic'
         },
@@ -34,9 +36,9 @@ require.config({
             'ionic', 'uiRouter',
             'angularAnimate',
             'angularTouch',
+            'angularRatings',
             'angularSanitize',
             'angularResource',
-            'angularRatings',
             'angularTranslate'
         ]
     },

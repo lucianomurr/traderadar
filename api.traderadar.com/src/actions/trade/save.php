@@ -11,6 +11,8 @@ $headers = apache_request_headers();
 
   $data = json_decode($request->data);
 
+  print_r($data);
+  
   //get data from request
   $newCrossReference = $data->CrossReference;
   $newTimeframe = $data->TimeFrame;
@@ -43,9 +45,12 @@ $headers = apache_request_headers();
   $entityManager->flush();
 
   if ($newTrade = $trade->getId()){
-    header('HTTP/1.0 204 No Content');
+    $response->sendHeaders('HTTP/1.0 200 ok');
     echo '{"success": true,"payload": {"tradeId": '.$trade->getId().'}}';
     
+  }else{
+    $response->sendHeaders('HTTP/1.0 204 ok');
+    echo '{"success": false,"payload": {},"error": {"code": 204,"message": "Error during data save!"}}';
   }
   
   
